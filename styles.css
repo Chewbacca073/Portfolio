@@ -1,0 +1,19 @@
+: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul.skills li {
+  background: #e0e0e0;
+  margin: 5px;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #222;
+  color: white;
+  margin-top: 2rem;
+}
