@@ -113,3 +113,21 @@ footer {
   margin: 1rem 0;
   border-radius: 8px;
 }
+
+.education-card {
+  background-color: #1e1e1e;
+  border-left: 4px solid #00bcd4;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+.skills ul, .languages ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.skills li, .languages li {
+  margin: 0.5rem 0;
+}
