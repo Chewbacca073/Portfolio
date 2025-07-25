@@ -1,44 +1,40 @@
-/* Content Section Containers */
+/* Apply this to all section containers */
 .content-section,
 .hero {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 2rem;
+  padding: 4rem 1rem;
 }
 
-/* Section Bubble/Block */
+/* Apply to each "bubble" block */
 .content-section > section,
 .hero,
 .project-card,
 .experience-card,
 .education-card {
-  background-color: rgba(30, 30, 30, 0.9); /* semi-transparent dark */
+  background-color: rgba(30, 30, 30, 0.9);
   border-radius: 16px;
   padding: 2rem;
-  margin: 1rem auto;
-  max-width: 800px;
+  margin: 1.5rem auto;
+  max-width: 850px;
   width: 90%;
-  box-shadow: 0 4px 12px rgba(0, 188, 212, 0.2);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 188, 212, 0.15);
+  text-align: center;
 }
 
-.content-section > section:hover {
-  transform: scale(1.01);
-}
-
-/* Custom Background Image */
+/* Body background image */
 body {
   background-color: #121212;
-  background-image: url('"W:\Portfolio\360_F_136255856_XGPHT6zyNJay48Dprr0bTVYb4XlUuSaI.jpg"'); /* Replace with actual image path */
+  background-image: url('images/background.jpg'); /* adjust path */
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center;
   color: #e0e0e0;
 }
 
-/* Optional: Semi-transparent overlay if the background is too bright */
+/* Optional: dark overlay to ensure text stays readable */
 body::before {
   content: "";
   position: fixed;
@@ -46,7 +42,7 @@ body::before {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(18, 18, 18, 0.85);
+  background: rgba(18, 18, 18, 0.85);
   z-index: -1;
 }
 
