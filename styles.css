@@ -1,4 +1,9 @@
-/* Apply this to all section containers */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .content-section,
 .hero {
   display: flex;
@@ -7,7 +12,6 @@
   padding: 4rem 1rem;
 }
 
-/* Apply to each "bubble" block */
 .content-section > section,
 .hero,
 .project-card,
@@ -16,17 +20,21 @@
   background-color: rgba(30, 30, 30, 0.9);
   border-radius: 16px;
   padding: 2rem;
-  margin: 1.5rem auto;
+  margin: 2rem auto;
+  width: 100%;
   max-width: 850px;
-  width: 90%;
   box-shadow: 0 4px 20px rgba(0, 188, 212, 0.15);
   text-align: center;
 }
 
-/* Body background image */
+section {
+  scroll-margin-top: 100px;
+}
+
+/* Background image setup */
 body {
   background-color: #121212;
-  background-image: url('images/background.jpg'); /* adjust path */
+  background-image: url('Images/360_F_136255856_XGPHT6zyNJay48Dprr0bTVYb4XlUuSaI.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -34,7 +42,7 @@ body {
   color: #e0e0e0;
 }
 
-/* Optional: dark overlay to ensure text stays readable */
+/* Optional dark overlay */
 body::before {
   content: "";
   position: fixed;
