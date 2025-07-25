@@ -25,10 +25,28 @@ main {
   width: 100%;
   max-width: 850px;
   box-shadow: 0 4px 20px rgba(0, 188, 212, 0.15);
-  text-align: center;
+  color: #e0e0e0;
+  text-align: left;
   min-width: 280px; /* Prevent squashing on smaller screens */
 }
 
+/* Make the bubble the same style as above cards */
+.bubble {
+  background-color: rgba(30, 30, 30, 0.9);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 850px;
+  box-shadow: 0 4px 20px rgba(0, 188, 212, 0.15);
+  color: #e0e0e0;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1rem;
+  word-wrap: break-word;
+}
+
+/* Section scroll margin */
 section {
   scroll-margin-top: 100px;
 }
@@ -36,7 +54,7 @@ section {
 /* Background image setup */
 body {
   background-color: #121212;
-  background-image: url('Images/wall.jpg');
+  background-image: url('Images/wallpaper.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -44,7 +62,7 @@ body {
   color: #e0e0e0;
 }
 
-/* Dark overlay, slightly lighter for better brightness */
+/* Dark overlay */
 body::before {
   content: "";
   position: fixed;
@@ -52,11 +70,11 @@ body::before {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(18, 18, 18, 0.3); /* LIGHTER overlay */
+  background: rgba(18, 18, 18, 0.3);
   z-index: -1;
 }
 
-/* Disable fixed background on mobile for better performance and visibility */
+/* Disable fixed background on mobile for performance */
 @media (max-width: 768px) {
   body {
     background-attachment: scroll !important;
@@ -64,7 +82,7 @@ body::before {
   }
 
   body::before {
-    background: rgba(18, 18, 18, 0.2); /* Even lighter on mobile */
+    background: rgba(18, 18, 18, 0.2);
   }
 
   main {
@@ -78,35 +96,25 @@ body::before {
   .project-card,
   .experience-card,
   .education-card,
-  .about-me {
+  .about-me,
+  .bubble {
     margin: 1rem auto;
     padding: 1.5rem;
-    text-align: center;
     width: 100%;
     box-sizing: border-box;
   }
 
   h2, h3, p, li {
-    text-align: center;
+    text-align: left;
   }
 }
 
-/* Typography and heading colors/alignment */
-h1, h2, h3 {
+/* Headings style - color and alignment */
+h2, h3 {
   color: #DF20A6;
   text-align: left;
   margin-left: 0;
-}
-
-h2 {
-  font-size: 2rem;
   margin-bottom: 1rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
 }
 
 /* Navbar layout fix */
@@ -146,29 +154,4 @@ h3 {
 .nav-links li a.active {
   color: #00bcd4;
   font-weight: bold;
-}
-
-/* Bubble styling for skills and languages */
-.bubble {
-  display: inline-block;
-  background-color: rgba(0, 188, 212, 0.15);
-  border-radius: 16px;
-  padding: 1rem 1.5rem;
-  margin: 1rem 0;
-  max-width: 850px;
-  color: #00bcd4;
-  text-align: left;
-  font-weight: 600;
-  box-shadow: 0 4px 20px rgba(0, 188, 212, 0.15);
-  font-size: 1rem;
-  word-wrap: break-word;
-}
-
-/* Responsive adjustments for bubble on mobile */
-@media (max-width: 768px) {
-  .bubble {
-    width: 100%;
-    padding: 1rem;
-    font-size: 0.9rem;
-  }
 }
