@@ -26,7 +26,7 @@ main {
   max-width: 850px;
   box-shadow: 0 4px 20px rgba(0, 188, 212, 0.15);
   text-align: center;
-  min-width: 280px; /* Prevent squashing on smaller screens */
+  min-width: 280px;
 }
 
 section {
@@ -52,11 +52,11 @@ body::before {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(18, 18, 18, 0.3); /* LIGHTER overlay */
+  background: rgba(18, 18, 18, 0.3);
   z-index: -1;
 }
 
-/* Disable fixed background on mobile for better performance and visibility */
+/* Mobile view tweaks */
 @media (max-width: 768px) {
   body {
     background-attachment: scroll !important;
@@ -64,7 +64,7 @@ body::before {
   }
 
   body::before {
-    background: rgba(18, 18, 18, 0.2); /* Even lighter on mobile */
+    background: rgba(18, 18, 18, 0.2);
   }
 
   main {
@@ -89,18 +89,22 @@ body::before {
   h2, h3, p, li {
     text-align: center;
   }
+
+  .skills-list, .languages-list {
+    justify-content: center;
+  }
 }
 
-/* Typography */
+/* Typography – Darker headings */
 h2 {
   font-size: 2rem;
-  color: #00bcd4;
+  color: #00acc1; /* Darker for visibility */
   margin-bottom: 1rem;
 }
 
 h3 {
   font-size: 1.5rem;
-  color: #00bcd4;
+  color: #00acc1; /* Darker for visibility */
   margin-top: 2rem;
   margin-bottom: 0.5rem;
 }
@@ -142,4 +146,32 @@ h3 {
 .nav-links li a.active {
   color: #00bcd4;
   font-weight: bold;
+}
+
+/* Skills and Languages Bubbles */
+.skills-list,
+.languages-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.skills-list span,
+.languages-list span {
+  background-color: rgba(0, 172, 193, 0.15);
+  border: 1px solid #00acc1;
+  color: #00acc1;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.skills-list span:hover,
+.languages-list span:hover {
+  background-color: #00acc1;
+  color: #121212;
 }
