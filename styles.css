@@ -26,6 +26,7 @@ main {
   max-width: 850px;
   box-shadow: 0 4px 20px rgba(0, 188, 212, 0.15);
   text-align: center;
+  min-width: 280px; /* Prevent squashing on smaller screens */
 }
 
 section {
@@ -43,10 +44,31 @@ body {
   color: #e0e0e0;
 }
 
-/* Disable fixed background on mobile for better performance */
+/* Dark overlay, slightly lighter for better brightness */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(18, 18, 18, 0.3); /* LIGHTER overlay */
+  z-index: -1;
+}
+
+/* Disable fixed background on mobile for better performance and visibility */
 @media (max-width: 768px) {
+  body {
+    background-attachment: scroll !important;
+    background-position: top;
+  }
+
+  body::before {
+    background: rgba(18, 18, 18, 0.2); /* Even lighter on mobile */
+  }
+
   main {
-    padding: 0 1rem;  /* add some horizontal padding */
+    padding: 0 1rem;
     width: 100%;
     box-sizing: border-box;
   }
@@ -57,23 +79,16 @@ body {
   .experience-card,
   .education-card,
   .about-me {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    margin: 1rem auto;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
   }
-}
 
-/* Optional dark overlay */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(18, 18, 18, 0.85);
-  z-index: -1;
+  h2, h3, p, li {
+    text-align: center;
+  }
 }
 
 /* Typography */
