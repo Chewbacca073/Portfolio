@@ -43,6 +43,13 @@ body {
   color: #e0e0e0;
 }
 
+/* Disable fixed background on mobile for better performance */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
 /* Optional dark overlay */
 body::before {
   content: "";
