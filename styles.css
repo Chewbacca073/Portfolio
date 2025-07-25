@@ -16,7 +16,8 @@ main {
 .hero,
 .project-card,
 .experience-card,
-.education-card {
+.education-card,
+.about-me {
   background-color: rgba(30, 30, 30, 0.9);
   border-radius: 16px;
   padding: 2rem;
@@ -34,7 +35,7 @@ section {
 /* Background image setup */
 body {
   background-color: #121212;
-  background-image: url('Images/360_F_136255856_XGPHT6zyNJay48Dprr0bTVYb4XlUuSaI.jpg');
+  background-image: url('Images\8045862-red-and-black-3840x2160.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -54,8 +55,55 @@ body::before {
   z-index: -1;
 }
 
+/* Typography */
+h2 {
+  font-size: 2rem;
+  color: #00bcd4;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #00bcd4;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Navbar layout fix */
 .navbar {
+  background-color: #1e1e1e;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   position: sticky;
   top: 0;
   z-index: 100;
+}
+
+.logo {
+  color: #00bcd4;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-left: auto;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #e0e0e0;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #00bcd4;
+  font-weight: bold;
 }
