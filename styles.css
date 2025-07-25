@@ -36,7 +36,7 @@ section {
 /* Background image setup */
 body {
   background-color: #121212;
-  background-image: url('Images/picture.jpg');
+  background-image: url('Images/wall.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -44,7 +44,7 @@ body {
   color: #e0e0e0;
 }
 
-/* Dark overlay, lighter for brightness */
+/* Dark overlay, slightly lighter for better brightness */
 body::before {
   content: "";
   position: fixed;
@@ -52,7 +52,7 @@ body::before {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(18, 18, 18, 0.3);
+  background: rgba(18, 18, 18, 0.3); /* LIGHTER overlay */
   z-index: -1;
 }
 
@@ -64,7 +64,7 @@ body::before {
   }
 
   body::before {
-    background: rgba(18, 18, 18, 0.2);
+    background: rgba(18, 18, 18, 0.2); /* Even lighter on mobile */
   }
 
   main {
@@ -78,8 +78,7 @@ body::before {
   .project-card,
   .experience-card,
   .education-card,
-  .about-me,
-  .bubble {
+  .about-me {
     margin: 1rem auto;
     padding: 1.5rem;
     text-align: center;
@@ -92,11 +91,22 @@ body::before {
   }
 }
 
-/* Typography: all headings same dark teal and left aligned */
-h2, h3 {
-  color: #004d40; /* Dark teal */
-  margin-bottom: 1rem;
+/* Typography and heading colors/alignment */
+h1, h2, h3 {
+  color: #DF20A6;
   text-align: left;
+  margin-left: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Navbar layout fix */
@@ -138,39 +148,27 @@ h2, h3 {
   font-weight: bold;
 }
 
-/* Bubble style matching other content cards */
+/* Bubble styling for skills and languages */
 .bubble {
-  background-color: rgba(30, 30, 30, 0.9);
+  display: inline-block;
+  background-color: rgba(0, 188, 212, 0.15);
   border-radius: 16px;
-  padding: 2rem;
-  margin: 2rem auto;
-  width: 100%;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
   max-width: 850px;
-  box-shadow: 0 4px 20px rgba(0, 188, 212, 0.15);
-  color: #e0e0e0;
-  font-weight: normal;
-  font-size: 1rem;
+  color: #00bcd4;
   text-align: left;
-  box-sizing: border-box;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(0, 188, 212, 0.15);
+  font-size: 1rem;
+  word-wrap: break-word;
 }
 
-/* Lists inside bubble */
-.bubble ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.bubble ul li {
-  margin-bottom: 0.5rem;
-  padding-left: 1rem;
-  position: relative;
-}
-
-/* Responsive bubble on mobile */
+/* Responsive adjustments for bubble on mobile */
 @media (max-width: 768px) {
   .bubble {
-    max-width: 100%;
-    padding: 1.5rem;
+    width: 100%;
+    padding: 1rem;
+    font-size: 0.9rem;
   }
 }
