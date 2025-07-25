@@ -26,7 +26,7 @@ main {
   max-width: 850px;
   box-shadow: 0 4px 20px rgba(0, 188, 212, 0.15);
   text-align: center;
-  min-width: 280px;
+  min-width: 280px; /* Prevent squashing on smaller screens */
 }
 
 section {
@@ -52,11 +52,11 @@ body::before {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(18, 18, 18, 0.3);
+  background: rgba(18, 18, 18, 0.3); /* LIGHTER overlay */
   z-index: -1;
 }
 
-/* Mobile view tweaks */
+/* Disable fixed background on mobile for better performance and visibility */
 @media (max-width: 768px) {
   body {
     background-attachment: scroll !important;
@@ -64,7 +64,7 @@ body::before {
   }
 
   body::before {
-    background: rgba(18, 18, 18, 0.2);
+    background: rgba(18, 18, 18, 0.2); /* Even lighter on mobile */
   }
 
   main {
@@ -86,11 +86,15 @@ body::before {
     box-sizing: border-box;
   }
 
-  h2, h3, p, li {
+  h2,
+  h3,
+  p,
+  li {
     text-align: center;
   }
 
-  .skills-list, .languages-list {
+  .skills-list,
+  .languages-list {
     justify-content: center;
   }
 }
@@ -152,10 +156,13 @@ h3 {
 .skills-list,
 .languages-list {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap;       /* allow wrapping */
   gap: 0.75rem;
   justify-content: center;
   margin-top: 1rem;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .skills-list span,
@@ -167,7 +174,9 @@ h3 {
   border-radius: 999px;
   font-weight: bold;
   font-size: 0.95rem;
+  white-space: nowrap;
   transition: background 0.3s, color 0.3s;
+  cursor: default;
 }
 
 .skills-list span:hover,
