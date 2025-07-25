@@ -35,7 +35,7 @@ section {
 /* Background image setup */
 body {
   background-color: #121212;
-  background-image: url('Images\8045862-red-and-black-3840x2160.jpg');
+  background-image: url('"Images\8045862-red-and-black-3840x2160.jpg"');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
