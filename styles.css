@@ -35,7 +35,7 @@ section {
 /* Background image setup */
 body {
   background-color: #121212;
-  background-image: url('Images/pic.jpg');
+  background-image: url('Images/picture.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -45,8 +45,22 @@ body {
 
 /* Disable fixed background on mobile for better performance */
 @media (max-width: 768px) {
-  body {
-    background-attachment: scroll;
+  main {
+    padding: 0 1rem;  /* add some horizontal padding */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .content-section,
+  .hero,
+  .project-card,
+  .experience-card,
+  .education-card,
+  .about-me {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
