@@ -44,7 +44,7 @@ body {
   color: #e0e0e0;
 }
 
-/* Dark overlay, slightly lighter for better brightness */
+/* Dark overlay, lighter for brightness */
 body::before {
   content: "";
   position: fixed;
@@ -52,7 +52,7 @@ body::before {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(18, 18, 18, 0.3); /* LIGHTER overlay */
+  background: rgba(18, 18, 18, 0.3);
   z-index: -1;
 }
 
@@ -64,7 +64,7 @@ body::before {
   }
 
   body::before {
-    background: rgba(18, 18, 18, 0.2); /* Even lighter on mobile */
+    background: rgba(18, 18, 18, 0.2);
   }
 
   main {
@@ -78,7 +78,8 @@ body::before {
   .project-card,
   .experience-card,
   .education-card,
-  .about-me {
+  .about-me,
+  .bubble {
     margin: 1rem auto;
     padding: 1.5rem;
     text-align: center;
@@ -89,19 +90,13 @@ body::before {
   h2, h3, p, li {
     text-align: center;
   }
-
-  /* Bubble full width on mobile */
-  .bubble {
-    max-width: 100%;
-    padding: 1rem;
-  }
 }
 
-/* Typography */
-/* Darker blue for all main headings for better contrast */
+/* Typography: all headings same dark teal and left aligned */
 h2, h3 {
-  color: #004d40; /* dark teal */
+  color: #004d40; /* Dark teal */
   margin-bottom: 1rem;
+  text-align: left;
 }
 
 /* Navbar layout fix */
@@ -143,40 +138,39 @@ h2, h3 {
   font-weight: bold;
 }
 
-/* Bubble container for skills & languages */
+/* Bubble style matching other content cards */
 .bubble {
-  display: inline-block;
-  background-color: rgba(0, 172, 193, 0.15);
-  border: 2px solid #00acc1;
-  color: #00acc1;
-  padding: 1rem 2rem;
-  border-radius: 9999px; /* pill shape */
-  font-weight: bold;
-  font-size: 1rem;
+  background-color: rgba(30, 30, 30, 0.9);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem auto;
+  width: 100%;
   max-width: 850px;
-  margin: 1rem auto 2rem;
-  text-align: center;
-  cursor: default;
-  transition: background 0.3s, color 0.3s;
-  white-space: normal; /* allow wrapping */
+  box-shadow: 0 4px 20px rgba(0, 188, 212, 0.15);
+  color: #e0e0e0;
+  font-weight: normal;
+  font-size: 1rem;
+  text-align: left;
+  box-sizing: border-box;
 }
 
-/* Remove list styles inside bubble */
+/* Lists inside bubble */
 .bubble ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: inline-block;
-  text-align: left;
 }
 
-/* Vertical spacing between list items */
 .bubble ul li {
-  margin: 0.25rem 0;
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
 }
 
-/* Hover effect on bubble */
-.bubble:hover {
-  background-color: #00acc1;
-  color: #121212;
+/* Responsive bubble on mobile */
+@media (max-width: 768px) {
+  .bubble {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
 }
